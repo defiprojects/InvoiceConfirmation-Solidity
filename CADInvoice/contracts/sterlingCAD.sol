@@ -108,7 +108,7 @@ contract SterlingCAD is Ownable {
     }
 
     function withdraw() public {
-        require(balances[msg.sender] != 0, "Customer Balance");
+        require(balances[msg.sender] != 0, "Customer Withdrawal Balance");
         uint256 toWithdraw = balances[msg.sender];
         balances[msg.sender] = 0;
         msg.sender.transfer(toWithdraw);
