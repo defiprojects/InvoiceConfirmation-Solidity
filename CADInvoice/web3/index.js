@@ -1,0 +1,6 @@
+const { getOwner, getTnxCount, getTnxStat, getTotalSupply, balanceOf, getadmins, isApproved, getApprovalCount, getscheduleCount, getapprovals, getscheduleIds, getTokenBals, getWhiteList, getauthorizers, getlastestblocknumber, getblock, getblocknumber, gettransactionfromblock, getTotalBals } = require("./getterApi")
+
+const { createAccount, validateSchedule, updateSchedule, createSchedule, undoApprovalMint, approveMint, changeRequirement, replaceAuthorizer, removeAuthorizer, addAuthorizer, replaceAdmin, removeAdmin, addAdmin, verifySchedule, decreaseAllowance, increaseAllowance, transferFrom, approve, allowance, transfer, generateToken, setWhiteList, removeWhiteList } = require("./setterApi")
+
+module.exports = {getOwner, getTnxCount, getTnxStat, getTotalSupply, balanceOf, getadmins, isApproved, getApprovalCount, getscheduleCount, getapprovals, getscheduleIds, createAccount, validateSchedule, updateSchedule, createSchedule, undoApprovalMint, approveMint, changeRequirement, replaceAdmin, removeAdmin, addAdmin, verifySchedule, decreaseAllowance, increaseAllowance, transferFrom, approve, allowance, transfer, generateToken, getTokenBals, replaceAuthorizer, removeAuthorizer, addAuthorizer, setWhiteList, removeWhiteList, getWhiteList, getauthorizers, getlastestblocknumber, getblock, getblocknumber, gettransactionfromblock, getTotalBals
+}
