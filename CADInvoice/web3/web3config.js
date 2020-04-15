@@ -8,7 +8,7 @@ require('dotenv').config()
  const abi = ""
  const contract = new web3.eth.Contract(abi, address);
  //accounts
- const account = process.env.SUPERADMIN
+ const account = process.env.OWNER
 
  module.exports = {web3, address, abi, contract, account}
 

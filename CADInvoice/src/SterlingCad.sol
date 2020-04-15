@@ -68,8 +68,8 @@ contract Ownable {
 }
 
 /**
-* @title CaleroMain
-* @dev Calero platform main smart contract.
+* @title SterlingCAD
+* @dev SterlingCAD platform main smart contract.
 */
 contract SterlingCad is Ownable {
     struct Invoice {
