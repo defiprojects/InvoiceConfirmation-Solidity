@@ -1,0 +1,160 @@
+{  
+    "openapi": "3.0.0",
+    "info":{  
+       "description":"INVOICE CONFIRMATION/PAYMENT DOMICILIATION VIA BLOCKCHAIN API DOCUMENTATION",
+       "version":"1.0.0",
+       "title":"Sterling CAD Invoice Confirmation"
+    },
+    "servers": [{
+      "url": "http://localhost:8080/api-docs",
+      "description": "Local server"
+    }
+    ],
+    "schemes":[  
+       "http"
+    ],
+    "paths":{  
+      "/ping":{  
+         "get":{  
+            "summary":"Ping Server",
+            "description":"This returns true if the server is up and false if the server is down",
+            "responses":{  
+               "200":{  
+                  "description": "successful operation",
+                     "content" : {
+                        "application/json" : {
+                           "schema":{  
+                              "$ref":"#/components/schemas/pingResponse"
+                           }
+                       }  
+                     }
+               }, 
+               "400":{  
+                  "description":"Bad Request operation",
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref":"#/components/schemas/errorResponse"
+                        }
+                     }
+                  }
+               }, 
+               "500":{  
+                  "description":"Server Failure operation",
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref":"#/components/schemas/errorResponse"
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      },
+      "/users/register":{  
+         "post":{  
+            "tags": ["Authentication Operations"],
+            "summary":"User Login",
+            "description":"This profiles the user on the application as their first time login",
+            "parameters": [],
+            "requestBody":{  
+                  "description":"User Login Request Body",
+                  "required":true,
+                  "content" : {
+                     "application/json" : {
+                        "schema":{  
+                           "$ref":"#/components/schemas/LoginRequest"
+                        }
+                    }  
+                  }
+            },
+            "responses":{  
+               "200":{  
+                  "description":"successful operation",
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref":"#/components/schemas/LoginResponse"
+                        }
+                     }
+                  }
+               }, 
+               "400":{  
+                  "description":"Bad Request operation",
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref":"#/components/schemas/errorResponse"
+                        }
+                     }
+                  }
+               }, 
+               "500":{  
+                  "description":"Server Failure operation",
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref":"#/components/schemas/errorResponse"
+                        }
+                     }
+                  }
+               }
+            }
+        }
+         
+      },
+      "/users/login":{  
+         "post":{  
+            "tags": ["Authentication Operations"],
+            "summary":"User Registration",
+            "description":"This Authenticates Returning User Login",
+            "parameters": [],
+            "requestBody":{  
+                  "description":"RegistrationLogin Request Body",
+                  "required":true,
+                  "content" : {
+                     "application/json" : {
+                        "schema":{  
+                           "$ref":"#/components/schemas/LoginRequest"
+                        }
+                    }  
+                  }
+            },
+            "responses":{  
+               "200":{  
+                  "description":"successful operation",
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref":"#/components/schemas/LoginResponse"
+                        }
+                     }
+                  }
+               }, 
+               "400":{  
+                  "description":"Bad Request operation",
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref":"#/components/schemas/errorResponse"
+                        }
+                     }
+                  }
+               }, 
+               "500":{  
+                  "description":"Server Failure operation",
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref":"#/components/schemas/errorResponse"
+                        }
+                     }
+                  }
+               }
+            }
+        }
+         
+      }
+    }
+}

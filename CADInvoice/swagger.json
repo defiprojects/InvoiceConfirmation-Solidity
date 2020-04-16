@@ -1,0 +1,154 @@
+{  
+    "openapi": "3.0.0",
+    "info":{  
+       "description":"This is Sterling CAD Invoice Confirmation Project API Documentation",
+       "version":"1.0.0",
+       "title":"Sterling CAD Invoice Confirmation Shares"
+    },
+    "servers": [{
+      "url": "http://localhost:3000/api/v1",
+      "description": "Local server"
+    },
+    {
+      "url": "http://40.118.147.137:3000/api/v1",
+      "description": "Development server"
+    }],
+    "schemes":[  
+       "http"
+    ],
+    "paths":{  
+        "/ping":{  
+           "get":{  
+              "summary":"Ping Server",
+              "description":"This returns true if the server is up and false if the server is down",
+              "responses":{  
+                 "200":{  
+                    "description": "successful operation",
+                       "content" : {
+                          "application/json" : {
+                             "schema":{  
+                                "$ref":"#/components/schemas/pingResponse"
+                             }
+                         }  
+                       }
+                 }, 
+                 "400":{  
+                    "description":"Bad Request operation",
+                    "content": {
+                       "application/json": {
+                          "schema": {
+                             "$ref":"#/components/schemas/errorResponse"
+                          }
+                       }
+                    }
+                 }, 
+                 "500":{  
+                    "description":"Server Failure operation",
+                    "content": {
+                       "application/json": {
+                          "schema": {
+                             "$ref":"#/components/schemas/errorResponse"
+                          }
+                       }
+                    }
+                 }
+              }
+           }
+        },
+        "/users/register":{  
+            "post":{  
+               "tags": ["Authentication Operations"],
+               "summary":"User Login",
+               "description":"This profiles the user on the application as their first time login",
+               "parameters": [],
+               "requestBody":{  
+                     "description":"First Time Login Request Body",
+                     "required":true,
+                     "content" : {
+                        "application/json" : {
+                           "schema":{  
+                              "$ref":"#/components/schemas/LoginRequest"
+                           }
+                       }  
+                     }
+               },
+               "responses":{  
+                  "200":{  
+                     "description":"successful operation",
+                     "content": {
+                        "application/json": {
+                           "schema": {
+                              "$ref":"#/components/schemas/LoginResponse"
+                           }
+                        }
+                     }
+                  }, 
+                  "400":{  
+                     "description":"Bad Request operation",
+                     "content": {
+                        "application/json": {
+                           "schema": {
+                              "$ref":"#/components/schemas/errorResponse"
+                           }
+                        }
+                     }
+                  }, 
+                  "500":{  
+                     "description":"Server Failure operation",
+                     "content": {
+                        "application/json": {
+                           "schema": {
+                              "$ref":"#/components/schemas/errorResponse"
+                           }
+                        }
+                     }
+                  }
+               }
+           }
+            
+         },
+
+         "UsersResponse" : {
+            "type":"object",
+            "properties":{ 
+               "status":{  
+                  "type":"boolean"
+               }, 
+               "code":{  
+                  "type":"string"
+               },
+               "message":{  
+                  "type":"string"
+               },
+               "data":{  
+                  "type":"object",
+                  "properties" : {
+                     "users": {
+                        "type" : "array",
+                        "items" : {
+                           "type":"object",
+                           "properties" : {
+                              "userType": {
+                                 "type" : "string"
+                              },
+                              "status":  {
+                                 "type" : "boolean"
+                              },
+                              "_id":  {
+                                 "type" : "string"
+                              },
+                              "username":  {
+                                 "type" : "string"
+                              },
+                              "walletId":  {
+                                 "type" : "string"
+                              }
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+         }
+        }
+    }
