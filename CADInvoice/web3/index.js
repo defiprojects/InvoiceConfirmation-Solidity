@@ -1,11 +1,12 @@
-const { getInvoiceStat, getlastestblocknumber, getblock, getblocknumber  } = require("./getterApi")
+const { getInvoiceStat, getlastestblocknumber, getblock, getblocknumber } = require("./getterApi")
 
-const { addInvoice } = require("./setterApi")
+const { addInvoice, pay } = require("./setterApi")
 
 module.exports = {
     addInvoice,
     getblock,
     getlastestblocknumber,
     getblocknumber,
-    getInvoiceStat
+    getInvoiceStat,
+    pay
 }

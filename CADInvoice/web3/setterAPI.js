@@ -16,5 +16,10 @@ const connect = require('./web3config.js')
       }
     }
 
+    exports.pay = async () => {
+
+      
+    }
+
 
 

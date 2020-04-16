@@ -19,6 +19,23 @@ const connect = require('./web3config.js')
 
     },
 
+    exports.getOutgoingInvoice = async () => {
+        try {
+
+            let result = await connect.web3.eth.getBlockNumber()
+            console.log(result)
+            return result
+
+        } catch (error) {
+            err = {
+                name : "Web3-GetOutgoingInvoice",
+                error : error,
+            }
+            return err
+        }
+
+    }
+
     // get latest block number
     exports.getlastestblocknumber = async () => {
         try {
