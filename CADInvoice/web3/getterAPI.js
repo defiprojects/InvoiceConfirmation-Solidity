@@ -19,22 +19,6 @@ const connect = require('./web3config.js')
 
     },
 
-       exports.getadmins = async () => {
-        try {
-
-            let result = await connect.contract.methods.getadmins().call()
-            
-            return result
-
-        } catch (error) {
-            err = {
-                name : "Web3-GetAdmins",
-                error : error,
-            }
-            return err
-        }
-    },
-
     // get latest block number
     exports.getlastestblocknumber = async () => {
         try {

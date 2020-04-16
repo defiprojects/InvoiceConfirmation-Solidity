@@ -1,6 +1,6 @@
 const connect = require('./web3config.js')
 
-    //Token smart connect.contract methods
+    //smart connect.contract methods
     exports.addInvoice = async (_fromAddress, _amount, _invoiceNum)=>{ 
       try {
           
