@@ -58,11 +58,12 @@ app.get("/", (req, res) => {
 });
 
 // routes
-require("./routes/auth.routes")(app);
-require("./routes/user.routes")(app);
+// require("./routes/auth.routes")(app);
+// require("./routes/user.routes")(app);
+require("./routes/sterlingCAD.routes")(app);
 
 // set port, listen for requests
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8090;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
 });

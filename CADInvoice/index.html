@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ <title>Sterling CAD Invoice Confirmation</title>
+<link rel="stylesheet" type="text/css" href="./assets/style.css">
+<script src="./node_modules/web3/dist/web3.min.js"></script>
+</head>
+<body>
+ <div class="container">
+<h1>Get Invoice</h1>
+<h2 id="instructor"></h2>
+<label for="name" class="col-lg-2 control-label">Invoice Num</label>
+ <input id="name" type="text">
+<label for="name" class="col-lg-2 control-label">Address</label>
+ <input id="age" type="text">
+<button id="button">Search Blockchain</button>
+</div>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+
+<script>
+ if (typeof web3 !== 'undefined') {
+ web3 = new Web3(web3.currentProvider);
+ } else {
+ // set the provider you want from Web3.providers
+web3 = new Web3(new Web3.providers.HttpProvider("http://ropsten.infura.io/ws/v3/4c1b13ce2c89403d951d451c575a1f68"));
+ }
+</script>
+
+</body>
+</html>

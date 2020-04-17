@@ -48,11 +48,7 @@ contract SterlingCAD is Ownable {
         return (inv.issuer, inv.customer, inv.amount, inv.invoiceNum, inv.paid);
     }
 
-    function getIncomingInvoices(address customerAddress, uint256 uid)
-        public
-        view
-        onlyBackEnd
-        returns (uint256, address, uint256, uint256, bool)
+    function getIncomingInvoices(address customerAddress, uint256 uid) public view onlyBackEnd returns (uint256, address, uint256, uint256, bool)
     {
         Invoice memory inv = invoices[customers[customerAddress][uid]];
         return (
@@ -89,11 +85,7 @@ contract SterlingCAD is Ownable {
         );
     }
 
-    function numberOfOutgoingInvoices(address issuerAddress)
-        public
-        view
-        onlyBackEnd
-        returns (uint256)
+    function numberOfOutgoingInvoices(address issuerAddress) public view onlyBackEnd returns (uint256)
     {
         return issuers[issuerAddress].length;
     }
@@ -115,3 +107,4 @@ contract SterlingCAD is Ownable {
     }
 
 }
+
