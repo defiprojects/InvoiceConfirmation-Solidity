@@ -26,7 +26,6 @@ const connect = require('./web3config.js')
     exports.viewInvoice = async (req, res) => {
         var _id = req.body._id
         try {
-
             let result = await connect.web3.eth.viewInvoice(_id)
             console.log(result)
             // return result
@@ -43,51 +42,73 @@ const connect = require('./web3config.js')
 
     }
 
-    exports.numberOfIncomingInvoice = async (_customerAddress) => {
+    exports.numberOfIncomingInvoice = async (req, res) => {
+        var customerAddress = req.body._customerAddress
         try {
 
-            let result = await connect.web3.eth.numberOfIncomingInvoice(_customerAddress)
+            let result = await connect.web3.eth.numberOfIncomingInvoice(customerAddress)
             console.log(result)
-            return result
+            // return result
+            res.status(200).json(result)
 
         } catch (error) {
             err = {
                 name : "Web3-NumberOfIncomingInvoice",
                 error : error,
             }
-            return err
+            res.status(400).json(err)
         }
         
     }
 
     // get latest block number
-    exports.getlastestblocknumber = async () => {
+    exports.getlastestblocknumber = async (req, res) => {
         try {
 
             let result = await connect.web3.eth.getBlockNumber()
             console.log(result)
-            return result
+            res.status(200).json(result)
+            // return result
 
         } catch (error) {
             err = {
                 name : "Web3-GetLastestBlockNumber",
                 error : error,
             }
-            return err
+            // return err
+            res.status(400).json(err)
         }
     }
 
     // get latest block
-    exports.getblock = async (res, req) => {
+    exports.getblock = async (req, res) => {
         try {
             let result = await connect.web3.eth.getBlock('latest')
             console.log('Get Latest Block >>>',result)
             // return result
             res.status(200).json(result)
+            // return result
 
         } catch (error) {
             err = {
                 name : "Web3-GetLastestBlock",
+                error : error,
+            }
+            // return err
+            res.status(400).json(err)
+        }
+    }
+
+    exports.getBalance = async (req, res) => {
+        try {
+            let result = await connect.web3.eth.getBalance("0x08B0E1dE1DB9bBD1eDAca9F6551769F338602B25")
+            console.log(result)
+            res.status(200).json(result)
+            // return result
+
+        } catch (error) {
+            err = {
+                name : "Web3-GetBalance",
                 error : error,
             }
             // return err
