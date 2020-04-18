@@ -1,10 +1,9 @@
 var Web3 = require("web3")
 require('dotenv').config()
 
-
-var provider = new Web3.providers.HttpProvider("https://ropsten.infura.io/v3/4c1b13ce2c89403d951d451c575a1f68");
+var provider = new Web3.providers.HttpProvider("https://rinkeby.infura.io/v3/4c1b13ce2c89403d951d451c575a1f68");
 var web3 = new Web3(provider);
-const address = "0xe2574ebe83d41e2055a01241d78f07c956a1a312";
+const address = "0x08B0E1dE1DB9bBD1eDAca9F6551769F338602B25";
 const abi = [
 	{
 		"inputs": [
@@ -78,12 +77,38 @@ const abi = [
 		"inputs": [
 			{
 				"internalType": "uint256",
-				"name": "id",
+				"name": "invoiceNum",
 				"type": "uint256"
 			}
 		],
 		"name": "pay",
-		"outputs": [],
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
 		"stateMutability": "payable",
 		"type": "function"
 	},
@@ -173,6 +198,50 @@ const abi = [
 			}
 		],
 		"name": "getIncomingInvoices",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "customerAddress",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "invoiceNum",
+				"type": "uint256"
+			}
+		],
+		"name": "getInvoice",
 		"outputs": [
 			{
 				"internalType": "uint256",

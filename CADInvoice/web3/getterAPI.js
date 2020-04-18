@@ -61,6 +61,25 @@ const connect = require('./web3config.js')
         
     }
 
+    exports.getInvoice = async (req, res) => {
+        const {_fromAddress, _invoiceNum} = req.body
+        try {
+            
+            let result = await connect.web3.eth.getInvoice(_invoiceNum).send({from: _fromAddress})
+            console.log(result)
+            // return result
+            res.status(200).json(result)
+
+        } catch (error) {
+            err = {
+                name : "Web3-GetInvoice",
+                error : error,
+            }
+            res.status(400).json(err)
+        }
+        
+    }
+
     // get latest block number
     exports.getlastestblocknumber = async (req, res) => {
         try {

@@ -8,7 +8,7 @@ module.exports = function(app) {
     //Getter Routes
     app.get("/api/web3/block", getter.getblock); 
     app.get("/api/web3/blocknum", getter.getlastestblocknumber);
-    app.get("/api/web3/invoice", getter.viewInvoice);
+    app.get("/api/web3/invoice", getter.getInvoice);
     app.get("/api/web3/invoice1", getter.getOutgoingInvoice);
     app.get("/api/web3/balance", getter.getBalance);
     app.get("/api/web3/incoming", getter.numberOfIncomingInvoice);

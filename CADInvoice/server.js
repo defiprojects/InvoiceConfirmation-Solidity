@@ -25,7 +25,7 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 //web3 
 const Web3 = require("web3")
  
-const web3 = new Web3(new Web3.providers.HttpProvider("https://ropsten.infura.io/v3/4c1b13ce2c89403d951d451c575a1f68"))
+const web3 = new Web3(new Web3.providers.HttpProvider("https://rinkeby.infura.io/v3/4c1b13ce2c89403d951d451c575a1f68"))
  
 web3.eth.getBalance("0x08B0E1dE1DB9bBD1eDAca9F6551769F338602B25", function(err, result) {
   if (err) {

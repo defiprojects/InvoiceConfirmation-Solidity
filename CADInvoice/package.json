@@ -39,6 +39,7 @@
   },
   "homepage": "https://github.com/OpenZeppelin/starter-kit/blob/stable/README.md",
   "dependencies": {
+    "@openzeppelin/contracts": "^2.5.0",
     "amqplib": "^0.5.5",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
