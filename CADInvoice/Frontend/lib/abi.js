@@ -1,11 +1,4 @@
-var Web3 = require("web3")
-require('dotenv').config()
-
-
-var provider = new Web3.providers.HttpProvider("https://ropsten.infura.io/v3/4c1b13ce2c89403d951d451c575a1f68");
-var web3 = new Web3(provider);
-const address = "0x4602027eF2a039f6c1738C92Ec742e046fCa2556";
-const abi = contractAbi = [
+contractAbi = [
     {
         "constant": true,
         "inputs": [
@@ -435,10 +428,4 @@ const abi = contractAbi = [
     }
   ]
 
-const contract = new web3.eth.Contract(abi, address);
-
-//accounts
-const account = process.env.OWNER
-
-module.exports = { web3, address, abi, contract, account }
-
+  

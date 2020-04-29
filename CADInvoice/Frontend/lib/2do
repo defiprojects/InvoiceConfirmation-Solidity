@@ -1,0 +1,177 @@
+Move revoke certificate to issuer's screen,
+Test accesses, same acronym
+Create institution-specific portal
+
+API
+Invoice Template
+Landing page layout
+
+
+Migrations dry-run (simulation)
+===============================
+> Network name:    'ropsten-fork'
+> Network id:      3
+> Block gas limit: 0x7a121d
+
+
+1_initial_migration.js
+======================
+
+   Replacing 'Migrations'
+   ----------------------
+   > block number:        7750847
+   > block timestamp:     1587348005
+   > account:             0x08B0E1dE1DB9bBD1eDAca9F6551769F338602B25
+   > balance:             4.86242392651848
+   > gas used:            210237
+   > gas price:           10 gwei
+   > value sent:          0 ETH
+   > total cost:          0.00210237 ETH
+
+   -------------------------------------
+   > Total cost:          0.00210237 ETH
+
+
+2_deploy_certificates.js
+========================
+
+   Replacing 'SterlingToken'
+   -------------------------
+   > block number:        7750849
+   > block timestamp:     1587348016
+   > account:             0x08B0E1dE1DB9bBD1eDAca9F6551769F338602B25
+   > balance:             4.85211597651848
+   > gas used:            1003432
+   > gas price:           10 gwei
+   > value sent:          0 ETH
+   > total cost:          0.01003432 ETH
+
+
+   Replacing 'Issuers'
+   -------------------
+   > block number:        7750850
+   > block timestamp:     1587348025
+   > account:             0x08B0E1dE1DB9bBD1eDAca9F6551769F338602B25
+   > balance:             4.84313756651848
+   > gas used:            897841
+   > gas price:           10 gwei
+   > value sent:          0 ETH
+   > total cost:          0.00897841 ETH
+
+
+   Replacing 'SterlingCAD'
+   -----------------------
+   > block number:        7750851
+   > block timestamp:     1587348049
+   > account:             0x08B0E1dE1DB9bBD1eDAca9F6551769F338602B25
+   > balance:             4.82837775651848
+   > gas used:            1475981
+   > gas price:           10 gwei
+   > value sent:          0 ETH
+   > total cost:          0.01475981 ETH
+
+### finished deploying contracts
+   -------------------------------------
+   > Total cost:          0.03377254 ETH
+
+
+Summary
+=======
+> Total deployments:   4
+> Final cost:          0.03587491 ETH
+
+
+
+
+
+Starting migrations...
+======================
+> Network name:    'ropsten'
+> Network id:      3
+> Block gas limit: 0x7a121d
+
+
+1_initial_migration.js
+======================
+
+   Replacing 'Migrations'
+   ----------------------
+   > transaction hash:    0xc9dfb0822be98edbb9b6e3896360995518696107df5bff0c3d5168a266744cad
+   > Blocks: 1            Seconds: 41
+   > contract address:    0x7aDb06d5c8edA77df780dF323eF99De497A2e66D
+   > block number:        7750853
+   > block timestamp:     1587348079
+   > account:             0x08B0E1dE1DB9bBD1eDAca9F6551769F338602B25
+   > balance:             4.86227392651848
+   > gas used:            225237
+   > gas price:           10 gwei
+   > value sent:          0 ETH
+   > total cost:          0.00225237 ETH
+
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:          0.00225237 ETH
+
+
+2_deploy_certificates.js
+========================
+
+   Replacing 'SterlingToken'
+   -------------------------
+   > transaction hash:    0x40576afa56017de9dc100357c81443b6788fdae3fb29445095e36d660a4fda92
+   > Blocks: 1            Seconds: 33
+   > contract address:    0xDe5Fe02749E93e6c8CC7d14e39AcEda1B2550a35
+   > block number:        7750857
+   > block timestamp:     1587348181
+   > account:             0x08B0E1dE1DB9bBD1eDAca9F6551769F338602B25
+   > balance:             4.85181597651848
+   > gas used:            1003432
+   > gas price:           10 gwei
+   > value sent:          0 ETH
+   > total cost:          0.01003432 ETH
+
+
+   Replacing 'Issuers'
+   -------------------
+   > transaction hash:    0x8f77d9d1e468f1edbeb2c4a1c8c6be0d7bffb095837545fc292a7c9d691ec5d2
+   > Blocks: 1            Seconds: 13
+   > contract address:    0x0395a14a5E49B241B23f204f2a0853BFA45Fd2c1
+   > block number:        7750859
+   > block timestamp:     1587348210
+   > account:             0x08B0E1dE1DB9bBD1eDAca9F6551769F338602B25
+   > balance:             4.84268756651848
+   > gas used:            912841
+   > gas price:           10 gwei
+   > value sent:          0 ETH
+   > total cost:          0.00912841 ETH
+
+
+   Replacing 'SterlingCAD'
+   -----------------------
+   > transaction hash:    0x9ca52faf7d8e9f5de2802b4d5b7ba001b38d7222edfcbd56a9328cc1b2744bb3
+   > Blocks: 1            Seconds: 30
+   > contract address:    0x4602027eF2a039f6c1738C92Ec742e046fCa2556
+   > block number:        7750862
+   > block timestamp:     1587348253
+   > account:             0x08B0E1dE1DB9bBD1eDAca9F6551769F338602B25
+   > balance:             4.82732775651848
+   > gas used:            1535981
+   > gas price:           10 gwei
+   > value sent:          0 ETH
+   > total cost:          0.01535981 ETH
+
+### finished deploying contracts
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:          0.03452254 ETH
+
+
+Summary
+=======
+> Total deployments:   4
+> Final cost:          0.03677491 ETH
+
