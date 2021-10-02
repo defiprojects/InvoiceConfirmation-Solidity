@@ -1,4 +1,4 @@
-const debug = require('debug')('sterlingCAD:server');
+const debug = require('debug')('InvoiceControl:server');
 const http = require('http');
 const app = require('./server1')
 require('dotenv').config();
