@@ -1,7 +1,7 @@
 const truffleAssert = require('truffle-assertions')
 
 const Issuers = artifacts.require("Issuers")
-const SterlingCAD = artifacts.require("SterlingCAD")
+const InvoiceControl = artifacts.require("SterlingCAD")
 const Token = artifacts.require("SterlingToken")
 
 contract("Invoices", async accounts => {
@@ -23,10 +23,10 @@ contract("Invoices", async accounts => {
     it("Issuer can print vendors invoice", async () => {
         let issuers = await Issuers.new()
         let token = await Token.new()
-        let instance = await SterlingCAD.new(price, token.address, issuers.address, wallet)
+        let instance = await InvoiceControl.new(price, token.address, issuers.address, wallet)
 
         let inst = await issuers.addVendor(
-            "Sterling Bank",
+            "Vendor Bank",
             vendor,
         )
         let vendorHash = inst.receipt.logs[0].args[0]
@@ -62,10 +62,10 @@ contract("Invoices", async accounts => {
     it("Issuer cannot print non-existent invoice", async () => {
         let issuers = await Issuers.new()
         let token = await Token.new()
-        let instance = await SterlingCAD.new(price, token.address, issuers.address, wallet)
+        let instance = await InvoiceControl.new(price, token.address, issuers.address, wallet)
 
         await issuers.addVendor(
-            "Sterling Bank",
+            "Vendor Bank",
             vendor,
         )
 
@@ -99,10 +99,10 @@ contract("Invoices", async accounts => {
     it("Issuer cannot print invalid invoice", async () => {
         let issuers = await Issuers.new()
         let token = await Token.new()
-        let instance = await SterlingCAD.new(price, token.address, issuers.address, wallet)
+        let instance = await InvoiceControl.new(price, token.address, issuers.address, wallet)
 
         let result = await issuers.addVendor(
-            "Sterling Bank",
+            "Vendor Bank",
             vendor,
         )
         let vendorHash = result.receipt.logs[0].args[0]
@@ -139,10 +139,10 @@ contract("Invoices", async accounts => {
     it("Issuer cannot print invoice without payment", async () => {
         let issuers = await Issuers.new()
         let token = await Token.new()
-        let instance = await SterlingCAD.new(price, token.address, issuers.address, wallet)
+        let instance = await InvoiceControl.new(price, token.address, issuers.address, wallet)
 
         let result = await issuers.addVendor(
-            "Sterling Bank",
+            "Vendor Bank",
             vendor,
         )
         let vendorHash = result.receipt.logs[0].args[0]
@@ -171,10 +171,10 @@ contract("Invoices", async accounts => {
     it("Issuer can revoke invoice", async () => {
         let issuers = await Issuers.new()
         let token = await Token.new()
-        let instance = await SterlingCAD.new(price, token.address, issuers.address, wallet)
+        let instance = await InvoiceControl.new(price, token.address, issuers.address, wallet)
 
         let inst = await issuers.addVendor(
-            "Sterling Bank",
+            "Vendor Bank",
             vendor,
         )
         let vendorHash = inst.receipt.logs[0].args[0]
@@ -216,10 +216,10 @@ contract("Invoices", async accounts => {
     it("Others cannot revoke invoice", async () => {
         let issuers = await Issuers.new()
         let token = await Token.new()
-        let instance = await SterlingCAD.new(price, token.address, issuers.address, wallet)
+        let instance = await InvoiceControl.new(price, token.address, issuers.address, wallet)
 
         let inst = await issuers.addVendor(
-            "Sterling Bank",
+            "Vendor Bank",
             vendor,
         )
         let vendorHash = inst.receipt.logs[0].args[0]
@@ -280,7 +280,7 @@ contract("Invoices", async accounts => {
         let instance = await SterlingCAD.new(price, token.address, issuers.address, wallet)
 
         let inst = await issuers.addVendor(
-            "Sterling Bank",
+            "Vendor Bank",
             vendor,
         )
         let vendorHash = inst.receipt.logs[0].args[0]
@@ -326,10 +326,10 @@ contract("Invoices", async accounts => {
     it("Charging the right price", async () => {
         let issuers = await Issuers.new()
         let token = await Token.new()
-        let instance = await SterlingCAD.new(price, token.address, issuers.address, wallet)
+        let instance = await InvoiceControl.new(price, token.address, issuers.address, wallet)
 
         let inst = await issuers.addVendor(
-            "Sterling Bank",
+            "Vendor Bank",
             vendor,
         )
         let vendorHash = inst.receipt.logs[0].args[0]
