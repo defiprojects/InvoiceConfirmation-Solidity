@@ -12,18 +12,18 @@ contract("Vendors", async accounts => {
     it("Admin add/create Vendor", async () => {
         let instance = await Issuers.new()
         let result = await instance.addVendor(
-            "Sterling Bank",
+            "Vendor Bank",
             vendor,
         )
         await truffleAssert.eventEmitted(result, 'logNewVendor', (ev) => {
-            return ev._name == "Sterling Bank" && ev._code == vendor
+            return ev._name == "Vendor Bank" && ev._code == vendor
         })
     })
 
     it("Others cannot add/create vendor", async () => {
         let instance = await Issuers.new()
         await truffleAssert.fails(
-            instance.addVendor("Sterling Bank", vendor, {
+            instance.addVendor("Vendor Bank", vendor, {
                 from: issuer
             })
         )
@@ -32,7 +32,7 @@ contract("Vendors", async accounts => {
     it("Others cannot revoke/delete Vendor", async () => {
         let instance = await Issuers.new()
         let result = await instance.addVendor(
-            "Sterling Bank",
+            "Vendor Bank",
             vendor,
         )
         let vendorHash = result.receipt.logs[0].args[0]
@@ -46,7 +46,7 @@ contract("Vendors", async accounts => {
     it("Admin can revoke Vendor", async () => {
         let instance = await Issuers.new()
         let result = await instance.addVendor(
-            "Sterling Bank",
+            "Vendor Bank",
             vendor,
         )
         let vendorHash = result.receipt.logs[0].args[0]
