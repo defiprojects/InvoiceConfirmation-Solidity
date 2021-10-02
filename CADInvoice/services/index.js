@@ -1,6 +1,6 @@
 const { Login, UserDetails } = require("./login")
-const SterlingCADContract = require("../web3")
+const InvoiceControl = require("../web3")
 
 module.exports = {
-    Login, UserDetails, SterlingCADContract
+    Login, UserDetails, InvoiceControl
 }
