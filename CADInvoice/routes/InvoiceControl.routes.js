@@ -1,5 +1,5 @@
 const { auth } = require("../middlewares");
-const controller = require("../controllers/sterlingCAD");
+const controller = require("../controllers/InvoiceControl");
 const getter = require("../web3/getterAPI");
 const setter = require("../web3/setterAPI");
 
