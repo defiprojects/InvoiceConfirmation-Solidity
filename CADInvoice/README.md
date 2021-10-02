@@ -1,12 +1,12 @@
-# SterlingCAD
+# InvoiceControl
 > Created By Olusegun Komolafe
 
-Sterling Invoice Confirmation platform main smart contract.
-## sterlingCAD
+Invoice Confirmation smart contract.
+## InvoiceControl
 
 ## Functions :wrench:
 
-### Sterling CAD Invoice:
+### Invoice:
 
 
 ### Ownable SC:
