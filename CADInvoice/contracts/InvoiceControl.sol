@@ -2,7 +2,7 @@ pragma solidity >=0.4.0 <0.7.0;
 
 /**
 * @title Issuer Interface
-* @dev Only functions used by SterlingCAD are included
+* @dev Only functions used by InvoiceControl are included
 */
 interface Issuer {
     function checkRole(address addr, bytes32 roleName) external view;
@@ -19,10 +19,10 @@ interface ERC20 {
 }
 
 /**
-* @title SterlingCAD
+* @title InvoiceControl
 * @dev Prints the invoice
 */
-contract SterlingCAD {
+contract InvoiceControl {
 
     // @dev invoice data struct
     struct Invoice {
