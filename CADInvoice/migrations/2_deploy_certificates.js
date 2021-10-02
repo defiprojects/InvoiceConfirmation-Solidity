@@ -1,6 +1,6 @@
-var SterlingCAD = artifacts.require("SterlingCAD");
+var InvoiceControl = artifacts.require("InvoiceControl");
 var Issuers = artifacts.require("Issuers");
-var SterlingToken = artifacts.require("SterlingToken");
+var InvoiceControl = artifacts.require("Token");
 
 // for testing only, implments a token with faucet, mints tokens to deployer and creates an allowance for the print contract
 // then it creates an institution, and gives access to it and prints a certificate
@@ -10,13 +10,13 @@ const deployContractsDevelopment = async (deployer, accounts) => {
   const wallet = accounts[0]
 
   /* token */
-  const token = await deployer.deploy(SterlingToken)
+  const token = await deployer.deploy(Token)
 
   /* issuers */
   const issuers = await deployer.deploy(Issuers)
 
   /* print */
-  await deployer.deploy(SterlingCAD, "100000000000000000", token.address, issuers.address, wallet)
+  await deployer.deploy(InvoiceControl, "100000000000000000", token.address, issuers.address, wallet)
 
 }
 
@@ -25,12 +25,12 @@ const deployContracts = async (deployer, accounts) => {
 
     const wallet = accounts[0]
 
-    const token = await deployer.deploy(SterlingToken)
+    const token = await deployer.deploy(Token)
     /* issuers */
     const issuers = await deployer.deploy(Issuers)
 
     /* print */
-    const print = await deployer.deploy(SterlingCAD, "100000000000000000", token.address, issuers.address, wallet)
+    const print = await deployer.deploy(InvoiceControl, "100000000000000000", token.address, issuers.address, wallet)
 
     return true
   } catch (err) {
