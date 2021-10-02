@@ -7,9 +7,9 @@ import "../node_modules/@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
 // Added faucet functionality to enable testing
 
-contract SterlingToken is ERC20 {
+contract Token is ERC20 {
 
-    string public constant name = "Sterling Bank Token";
+    string public constant name = "Simple Token";
     uint8 public constant decimals = 18;
 
     // self service minting, to allow for easy testing.
