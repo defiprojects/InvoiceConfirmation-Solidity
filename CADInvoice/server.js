@@ -54,7 +54,7 @@ db.mongoose
 
 // simple route
 app.get("/", (req, res) => {
-  res.json({ message: "Welcome to Sterling CAD Invoice Confirmation application." });
+  res.json({ message: "Welcome to Invoice Confirmation application." });
 });
 
 // routes
