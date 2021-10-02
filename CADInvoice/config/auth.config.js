@@ -1,3 +1,3 @@
 module.exports = {
-    secret: "sterlingcad-secret-key"
+    secret: "InvoiceControl-secret-key"
   };
