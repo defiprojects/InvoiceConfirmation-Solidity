@@ -1,8 +1,8 @@
 const truffleAssert = require('truffle-assertions')
 
 const Issuers = artifacts.require("Issuers")
-const InvoiceControl = artifacts.require("SterlingCAD")
-const Token = artifacts.require("SterlingToken")
+const InvoiceControl = artifacts.require("InvoiceControl")
+const Token = artifacts.require("Token")
 
 contract("Invoices", async accounts => {
 
